@@ -9,8 +9,8 @@ const WrappedSingleListItem = ({
 }) => {
     return (
         <li
-            style={{ backgroundColor: isSelected ? 'green' : 'red' , margin: "10px"}}
-            onClick={() =>onClickHandler(index)}
+            style={{ backgroundColor: isSelected ? 'green' : 'red' , margin: "10px", padding: '5px'}}
+            onClick={() => onClickHandler(index)}
         >
             {text}
         </li>

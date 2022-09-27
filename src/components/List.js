@@ -1,12 +1,8 @@
 
-import React, { useState, useEffect, memo, PropTypes } from 'react';
-// import PropTypes from 'prop-types';
+import React, { useState, useEffect, memo } from 'react';
 import SingleListItem from './SingleListItem';
 
-// Single List Item
 
-
-// List Component
 const WrappedListComponent = ({ items }) => {
 
     const [selectedIndex, setSelectedIndex] = useState();
@@ -20,7 +16,7 @@ const WrappedListComponent = ({ items }) => {
     };
 
     return (
-        <ul style={{ textAlign: 'left' }}>
+        <ul style={{ textAlign: 'left' , width: '200px', margin: '0 auto'}}>
             {items.map((item, index) => (
                 <SingleListItem
                     key={index}
@@ -34,11 +30,6 @@ const WrappedListComponent = ({ items }) => {
     )
 };
 
-WrappedListComponent.propTypes = {
-    items: PropTypes?.toArray(PropTypes.shape({
-        text: PropTypes.string.isRequired,
-    })),
-};
 
 WrappedListComponent.defaultProps = {
     items: null,

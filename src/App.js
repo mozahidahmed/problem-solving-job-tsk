@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className="App">
+      <h2>Fruit List</h2>
       <List items={items}/>
     </div>
   );
