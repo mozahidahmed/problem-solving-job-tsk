@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, memo } from 'react';
 import SingleListItem from './SingleListItem';
 
@@ -7,12 +6,12 @@ const WrappedListComponent = ({ items }) => {
     const [selectedIndex, setSelectedIndex] = useState();
 
 
-// useEffect
+    // useEffect.............
     useEffect(() => {
         setSelectedIndex(null);
     }, [items, selectedIndex]);
 
-    // handle 
+    // handle ...........
     const handleClick = index => {
         setSelectedIndex(index);
     };
@@ -20,20 +19,19 @@ const WrappedListComponent = ({ items }) => {
 
 
     return (
-        // ul 
-        <ul style={{ textAlign: 'left' , width: '200px', margin: '0 auto'}}>
+
+        // ul ...........
+        <ul style={{ textAlign: 'left' , width: '300px', margin: '0 auto'}}>
            
-            {/* map */}
+            {/* map ...........*/}
             {items.map((item, index) => (
-                <SingleListItem
-                    key={index}
-                    onClickHandler={() => handleClick(index)}
-                    text={item.text}
+            <SingleListItem key={index} onClickHandler={() => handleClick(index)} text={item.text}
                     index={index}
                     isSelected={selectedIndex}
                 />
             ))}
-         {/* map */}
+         {/* map .............*/}
+
 
         </ul>
     )
@@ -48,7 +46,6 @@ const WrappedListComponent = ({ items }) => {
 WrappedListComponent.defaultProps = {
     items: null,
 };
-
 const List = memo(WrappedListComponent);
 // ............................................
 export default List;
