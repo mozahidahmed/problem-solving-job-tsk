@@ -4,19 +4,26 @@ import SingleListItem from './SingleListItem';
 
 
 const WrappedListComponent = ({ items }) => {
-
     const [selectedIndex, setSelectedIndex] = useState();
 
+
+// useEffect
     useEffect(() => {
         setSelectedIndex(null);
     }, [items, selectedIndex]);
 
+    // handle 
     const handleClick = index => {
         setSelectedIndex(index);
     };
 
+
+
     return (
+        // ul 
         <ul style={{ textAlign: 'left' , width: '200px', margin: '0 auto'}}>
+           
+            {/* map */}
             {items.map((item, index) => (
                 <SingleListItem
                     key={index}
@@ -26,16 +33,23 @@ const WrappedListComponent = ({ items }) => {
                     isSelected={selectedIndex}
                 />
             ))}
+         {/* map */}
+
         </ul>
     )
 };
 
 
+
+
+
+
+// ........................................
 WrappedListComponent.defaultProps = {
     items: null,
 };
 
 const List = memo(WrappedListComponent);
-
+// ............................................
 export default List;
 
